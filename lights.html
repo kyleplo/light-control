@@ -1,0 +1,117 @@
+
+                    <h2>Color Scheme</h2>
+<button data-type="scheme" data-value="0">Plain</button>
+
+
+<button data-type="scheme" data-value="1">RGB</button>
+
+
+<button data-type="scheme" data-value="2">Christmas</button>
+
+
+<button data-type="scheme" data-value="3">Hanukkah</button>
+
+
+<button data-type="scheme" data-value="4">Kwanzaa</button>
+
+
+<button data-type="scheme" data-value="5">Rainbow</button>
+
+
+<button data-type="scheme" data-value="6">Fire</button>
+
+
+<button data-type="scheme" data-value="7">Red</button>
+
+
+<button data-type="scheme" data-value="8">Orange</button>
+
+
+<button data-type="scheme" data-value="9">Yellow</button>
+
+
+<button data-type="scheme" data-value="10">Green</button>
+
+
+<button data-type="scheme" data-value="11">Blue</button>
+
+
+<button data-type="scheme" data-value="12">Purple</button>
+
+
+<button data-type="scheme" data-value="13">Pink</button>
+
+
+<button data-type="scheme" data-value="14">USA</button>
+
+
+<button data-type="scheme" data-value="15">Pure White</button>
+
+
+<button data-type="scheme" data-value="16">Candy Cane</button>
+
+                    <h2>Pattern</h2>
+
+<button data-type="pattern" data-value="0">Bars</button>
+
+
+<button data-type="pattern" data-value="1">Gradient</button>
+                    <h2>Width</h2>
+
+<button data-type="width" data-value="0">Small</button>
+
+
+<button data-type="width" data-value="1">Medium</button>
+
+
+<button data-type="width" data-value="2">Large</button>
+                    <h2>Animation</h2>
+<button data-type="speed" data-value="0">None</button>
+
+<button data-type="animation" data-value="0">Fade</button>
+
+
+<button data-type="animation" data-value="1">Flash</button>
+
+
+<button data-type="animation" data-value="2">Twinkle</button>
+
+
+<button data-type="animation" data-value="3">Flow-Twinkle</button>
+                    <h2>Animation Speed</h2>
+
+<button data-type="speed" data-value="0">None</button>
+
+
+<button data-type="speed" data-value="1">Slow</button>
+
+
+<button data-type="speed" data-value="2">Moderate</button>
+
+
+<button data-type="speed" data-value="3">Fast</button>
+
+                    <h2>On/Off</h2>
+
+<button data-type="brightness" data-value="0">Off</button>
+
+
+<button data-type="brightness" data-value="4">On</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var arduinoURL = 'http://seeed.local/arduino/';
+            var username = "kylesseeed";
+            var password = "seeeduino";
+
+            $('button').click(function(event) {
+                $.ajax({
+                    url: arduinoURL + event.target.getAttribute("data-type") + "/" + event.target.getAttribute("data-value"), 
+                    dataType: 'jsonp',
+                    jsonpCallback: 'dummy',username: username, password: password
+                });
+            });
+        });
+    </script>
+</html>
